@@ -3,4 +3,10 @@
     <string name="question1">Какая Ваша цель?</string>
     <string name="q1v1">Я хочу сбросить вес</string>
     <string name="q1v2">Я хочу набрать вес</string>
+    <string name="question2">Сколько Вы весите сейчас?</string>
+    <string name="q2v">Введите Ваш вес в килограммах</string>
+    <string name="q2unit">кг</string>
+    <string name="question3">К какому весы Вы стремитесь?</string>
+    <string name="q3v">Введите желаемый вес в килограммах</string>
+    <string name="q3unit">кг</string>
 </resources>
