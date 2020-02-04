@@ -11,6 +11,11 @@ class PagerAdapter(fragmentManager:FragmentManager) : FragmentPagerAdapter(fragm
             0 -> return FragmentQuestionOne.newInstance()
             1 -> return FragmentQuestionTwo.newInstance()
             2 -> return FragmentQuestionThree.newInstance()
+            3 -> return FragmentQuestionFour.newInstance()
+            4 -> return FragmentQuestionFive.newInstance()
+            5 -> return FragmentQuestionSix.newInstance()
+            6 -> return FragmentQuestionSeven.newInstance()
+
             else -> {
                 return FragmentQuestionOne.newInstance()
             }
@@ -18,6 +23,6 @@ class PagerAdapter(fragmentManager:FragmentManager) : FragmentPagerAdapter(fragm
     }
 
     override fun getCount(): Int {
-        return 3
+        return 7
     }
 }

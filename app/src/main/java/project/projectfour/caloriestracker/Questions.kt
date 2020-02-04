@@ -86,3 +86,63 @@ class FragmentQuestionFour: Fragment() {
         return view
     }
 }
+
+class FragmentQuestionFive: Fragment() {
+    companion object{
+        fun newInstance():FragmentQuestionFive{
+            var fragment = FragmentQuestionFive()
+            return fragment
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_q5,container,false)
+        //showNameDialog()
+
+        return view
+    }
+}
+
+class FragmentQuestionSix: Fragment() {
+    companion object{
+        fun newInstance():FragmentQuestionSix{
+            var fragment = FragmentQuestionSix()
+            return fragment
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_q6,container,false)
+        //showNameDialog()
+
+        return view
+    }
+}
+
+class FragmentQuestionSeven: Fragment() {
+    companion object{
+        fun newInstance():FragmentQuestionSeven{
+            var fragment = FragmentQuestionSeven()
+            return fragment
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_q7,container,false)
+        //showNameDialog()
+
+        return view
+    }
+}

@@ -9,4 +9,13 @@
     <string name="question3">К какому весы Вы стремитесь?</string>
     <string name="q3v">Введите желаемый вес в килограммах</string>
     <string name="q3unit">кг</string>
+    <string name="question4">Насколько Вы активны?</string>
+    <string name="question5">Какого Вы пола?</string>
+    <string name="question6">Сколько Вам лет?</string>
+    <string name="q6v">Введите Ваш возраст</string>
+    <string name="q6unit">лет</string>
+    <string name="question7">Какой у Вас рост?</string>
+    <string name="q7v">Введите Ваш рост в сантиметрах</string>
+    <string name="q7unit">см</string>
+
 </resources>
