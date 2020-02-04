@@ -23,7 +23,6 @@ class FragmentQuestionOne: Fragment() {
         val view = inflater.inflate(R.layout.fragment_q1,container,false)
         //showNameDialog()
 
-        val button = view.findViewById<Button>(R.id.button4)
         return view
     }
 }
