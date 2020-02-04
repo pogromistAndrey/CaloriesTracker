@@ -146,3 +146,23 @@ class FragmentQuestionSeven: Fragment() {
         return view
     }
 }
+
+class FragmentQuestionEight: Fragment() {
+    companion object{
+        fun newInstance():FragmentQuestionEight{
+            var fragment = FragmentQuestionEight()
+            return fragment
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_q8,container,false)
+        //showNameDialog()
+
+        return view
+    }
+}

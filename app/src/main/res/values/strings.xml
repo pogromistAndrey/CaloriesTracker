@@ -6,16 +6,25 @@
     <string name="question2">Сколько Вы весите сейчас?</string>
     <string name="q2v">Введите Ваш вес в килограммах</string>
     <string name="q2unit">кг</string>
-    <string name="question3">К какому весы Вы стремитесь?</string>
+    <string name="question3">К какому весу Вы стремитесь?</string>
     <string name="q3v">Введите желаемый вес в килограммах</string>
     <string name="q3unit">кг</string>
     <string name="question4">Насколько Вы активны?</string>
+    <string name="q4v1">Малоактивен (сидячая работа)</string>
+    <string name="q4v2">Занимаюсь 1-2 раза в неделю</string>
+    <string name="q4v3">Занимаюсь 3-4 раза в неделю</string>
     <string name="question5">Какого Вы пола?</string>
+    <string name="q5v1">Мужского</string>
+    <string name="q5v2">Женского</string>
     <string name="question6">Сколько Вам лет?</string>
     <string name="q6v">Введите Ваш возраст</string>
     <string name="q6unit">лет</string>
     <string name="question7">Какой у Вас рост?</string>
     <string name="q7v">Введите Ваш рост в сантиметрах</string>
     <string name="q7unit">см</string>
+    <string name="question8">Какой режим похудения Вам подойдёт?</string>
+    <string name="q8v1">Медленный</string>
+    <string name="q8v2">Нормальный</string>
+    <string name="q8v3">Быстрый</string>
 
 </resources>
