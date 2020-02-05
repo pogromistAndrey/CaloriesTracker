@@ -6,3 +6,7 @@ enum class Gender {
 enum class Mobility {
     LOW, MEDIUM, HIGH
 }
+
+enum class CaloriesMode{
+    SLOW, NORMAL, FAST
+}

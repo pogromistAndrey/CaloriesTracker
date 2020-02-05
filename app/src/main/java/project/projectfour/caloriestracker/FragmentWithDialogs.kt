@@ -19,6 +19,7 @@ class FragmentWithDialogs: Fragment() {
 
     lateinit var pager:ViewPager
     var userViewModel:UserViewModel? = null
+    var allowNext = false
     companion object{
         fun newInstance():FragmentWithDialogs{
             var fragment = FragmentWithDialogs()
@@ -49,9 +50,11 @@ class FragmentWithDialogs: Fragment() {
         }
         val nextButton = view.findViewById<Button>(R.id.next)
         nextButton.setOnClickListener {
-            if(pager.currentItem + 1 != pagerAdapter.count) {
-                pager.currentItem++
-                question.setText("Вопрос ${pager.currentItem + 1} из ${pagerAdapter.count}")
+            if(allowNext) {
+                if (pager.currentItem + 1 != pagerAdapter.count) {
+                    pager.currentItem++
+                    question.setText("Вопрос ${pager.currentItem + 1} из ${pagerAdapter.count}")
+                }
             }
         }
         return view

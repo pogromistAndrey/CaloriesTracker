@@ -2,6 +2,7 @@ package project.projectfour.caloriestracker.ViewModels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import project.projectfour.caloriestracker.data.CaloriesMode
 import project.projectfour.caloriestracker.data.Gender
 import project.projectfour.caloriestracker.data.Mobility
 import project.projectfour.caloriestracker.data.User
@@ -35,5 +36,9 @@ class UserViewModel(application:Application) : AndroidViewModel(application) {
 
     fun setMobility(mobility:Mobility){
         user.mobility = mobility
+    }
+
+    fun setMode(mode:CaloriesMode){
+        user.mode = mode
     }
 }
