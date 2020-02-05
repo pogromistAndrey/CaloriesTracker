@@ -6,8 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import project.projectfour.caloriestracker.ViewModels.UserViewModel
 
 class FragmentQuestionOne: Fragment() {
+    var userViewModel:UserViewModel? = null
     companion object{
         fun newInstance():FragmentQuestionOne{
             var fragment = FragmentQuestionOne()
@@ -22,12 +25,13 @@ class FragmentQuestionOne: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q1,container,false)
         //showNameDialog()
-
+        userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         return view
     }
 }
 
 class FragmentQuestionTwo: Fragment() {
+    var userViewModel:UserViewModel? = null
     companion object{
         fun newInstance():FragmentQuestionTwo{
             var fragment = FragmentQuestionTwo()
@@ -41,6 +45,7 @@ class FragmentQuestionTwo: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q2,container,false)
+        userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
 
         return view
@@ -48,6 +53,7 @@ class FragmentQuestionTwo: Fragment() {
 }
 
 class FragmentQuestionThree: Fragment() {
+    var userViewModel:UserViewModel? = null
     companion object{
         fun newInstance():FragmentQuestionThree{
             var fragment = FragmentQuestionThree()
@@ -61,6 +67,7 @@ class FragmentQuestionThree: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q3,container,false)
+        userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
 
         return view
@@ -68,6 +75,7 @@ class FragmentQuestionThree: Fragment() {
 }
 
 class FragmentQuestionFour: Fragment() {
+    var userViewModel:UserViewModel? = null
     companion object{
         fun newInstance():FragmentQuestionFour{
             var fragment = FragmentQuestionFour()
@@ -81,6 +89,7 @@ class FragmentQuestionFour: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q4,container,false)
+        userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
 
         return view
@@ -88,6 +97,7 @@ class FragmentQuestionFour: Fragment() {
 }
 
 class FragmentQuestionFive: Fragment() {
+    var userViewModel:UserViewModel? = null
     companion object{
         fun newInstance():FragmentQuestionFive{
             var fragment = FragmentQuestionFive()
@@ -101,6 +111,7 @@ class FragmentQuestionFive: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q5,container,false)
+        userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
 
         return view
@@ -108,6 +119,7 @@ class FragmentQuestionFive: Fragment() {
 }
 
 class FragmentQuestionSix: Fragment() {
+    var userViewModel:UserViewModel? = null
     companion object{
         fun newInstance():FragmentQuestionSix{
             var fragment = FragmentQuestionSix()
@@ -121,6 +133,7 @@ class FragmentQuestionSix: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q6,container,false)
+        userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
 
         return view
@@ -128,6 +141,7 @@ class FragmentQuestionSix: Fragment() {
 }
 
 class FragmentQuestionSeven: Fragment() {
+    var userViewModel:UserViewModel? = null
     companion object{
         fun newInstance():FragmentQuestionSeven{
             var fragment = FragmentQuestionSeven()
@@ -141,6 +155,7 @@ class FragmentQuestionSeven: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q7,container,false)
+        userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
 
         return view
@@ -148,6 +163,7 @@ class FragmentQuestionSeven: Fragment() {
 }
 
 class FragmentQuestionEight: Fragment() {
+    var userViewModel:UserViewModel? = null
     companion object{
         fun newInstance():FragmentQuestionEight{
             var fragment = FragmentQuestionEight()
@@ -161,6 +177,7 @@ class FragmentQuestionEight: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q8,container,false)
+        userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
 
         return view

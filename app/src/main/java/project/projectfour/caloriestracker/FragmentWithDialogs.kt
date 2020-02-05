@@ -10,12 +10,15 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
+import project.projectfour.caloriestracker.ViewModels.UserViewModel
 
 class FragmentWithDialogs: Fragment() {
 
     lateinit var pager:ViewPager
-
+    var userViewModel:UserViewModel? = null
     companion object{
         fun newInstance():FragmentWithDialogs{
             var fragment = FragmentWithDialogs()
@@ -29,6 +32,7 @@ class FragmentWithDialogs: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_with_dialogs,container,false)
+        userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
 
         pager = view.findViewById(R.id.pager)
