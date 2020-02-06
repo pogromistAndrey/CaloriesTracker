@@ -52,13 +52,18 @@ class FragmentWithDialogs: Fragment() {
             var check:Boolean? = true
             var mesage = ""
             when(pager.currentItem){
-                /*1 -> {
+                0 ->{
+                    check = userViewModel?.checkType()
+                    mesage = getString(R.string.err0)
+                }
+                1 -> {
                     check = userViewModel?.checkWeight()
-                    mesage = "Укажите свой вес"
+                    mesage = getString(R.string.err1)
                 }
                 2 -> {
                     check = userViewModel?.checkDesiredWeight()
-                }*/
+                    mesage = getString(R.string.err2)
+                }
                 3 -> {
                     check = userViewModel?.checkMobility()
                     mesage = getString(R.string.err3)
@@ -67,12 +72,14 @@ class FragmentWithDialogs: Fragment() {
                     check = userViewModel?.checkGender()
                     mesage = getString(R.string.err4)
                 }
-                /*5 -> {
+                5 -> {
                     check = userViewModel?.checkAge()
+                    mesage = getString(R.string.err5)
                 }
                 6 -> {
                     check = userViewModel?.checkHeight()
-                }*/
+                    mesage = getString(R.string.err6)
+                }
                 7 -> {
                     check = userViewModel?.checkMode()
                     mesage = getString(R.string.err7)

@@ -2,16 +2,20 @@ package project.projectfour.caloriestracker.ViewModels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import project.projectfour.caloriestracker.data.CaloriesMode
-import project.projectfour.caloriestracker.data.Gender
-import project.projectfour.caloriestracker.data.Mobility
-import project.projectfour.caloriestracker.data.User
+import project.projectfour.caloriestracker.data.*
 
 class UserViewModel(application:Application) : AndroidViewModel(application) {
     lateinit var user:User
 
     init {
         user = User()
+    }
+    fun setType(type:Type){
+        user.type= type
+    }
+    fun checkType():Boolean{
+        if(user.type == Type.NOTHING) return false
+        return true
     }
 
     fun setAge(age:Int){

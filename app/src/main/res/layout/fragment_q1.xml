@@ -31,13 +31,13 @@
         app:layout_constraintVertical_bias="0.13">
 
         <Button
-            android:id="@+id/low"
+            android:id="@+id/loss"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/q1v1" />
 
         <Button
-            android:id="@+id/medium"
+            android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/q1v2" />

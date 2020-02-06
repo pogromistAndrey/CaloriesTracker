@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.NumberPicker
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -12,6 +13,7 @@ import project.projectfour.caloriestracker.ViewModels.UserViewModel
 import project.projectfour.caloriestracker.data.CaloriesMode
 import project.projectfour.caloriestracker.data.Gender
 import project.projectfour.caloriestracker.data.Mobility
+import project.projectfour.caloriestracker.data.Type
 
 class FragmentQuestionOne: Fragment() {
     var userViewModel:UserViewModel? = null
@@ -28,8 +30,11 @@ class FragmentQuestionOne: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q1,container,false)
-        //showNameDialog()
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
+        val b_loss = view.findViewById<Button>(R.id.loss)
+        b_loss.setOnClickListener { userViewModel?.setType(Type.LESS) }
+        val b_add = view.findViewById<Button>(R.id.add)
+        b_add.setOnClickListener { userViewModel?.setType(Type.ADD) }
         return view
     }
 }
@@ -50,6 +55,16 @@ class FragmentQuestionTwo: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q2,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
+        val text = view.findViewById<EditText>(R.id.editText)
+        text.setOnKeyListener { view, i, keyEvent ->
+            val a = ((view as EditText).text).toString()
+            if(!a.equals("")) {
+                val b = a.toIntOrNull()
+                if (b != null)
+                    userViewModel?.setWeight(b)
+            }
+            false
+        }
         return view
     }
 }
@@ -70,6 +85,16 @@ class FragmentQuestionThree: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q3,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
+        val text = view.findViewById<EditText>(R.id.editText)
+        text.setOnKeyListener { view, i, keyEvent ->
+            val a = ((view as EditText).text).toString()
+            if(!a.equals("")) {
+                val b = a.toIntOrNull()
+                if (b != null)
+                    userViewModel?.setDesiredWeight(b)
+            }
+            false
+        }
         //showNameDialog()
 
         return view
@@ -146,7 +171,16 @@ class FragmentQuestionSix: Fragment() {
         val view = inflater.inflate(R.layout.fragment_q6,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
-
+        val text = view.findViewById<EditText>(R.id.editText)
+        text.setOnKeyListener { view, i, keyEvent ->
+            val a = ((view as EditText).text).toString()
+            if(!a.equals("")) {
+                val b = a.toIntOrNull()
+                if (b != null)
+                    userViewModel?.setAge(b)
+            }
+            false
+        }
         return view
     }
 }
@@ -167,6 +201,16 @@ class FragmentQuestionSeven: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q7,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
+        val text = view.findViewById<EditText>(R.id.editText)
+        text.setOnKeyListener { view, i, keyEvent ->
+            val a = ((view as EditText).text).toString()
+            if(!a.equals("")) {
+                val b = a.toIntOrNull()
+                if (b != null)
+                    userViewModel?.setHeight(b)
+            }
+            false
+        }
         //showNameDialog()
 
         return view

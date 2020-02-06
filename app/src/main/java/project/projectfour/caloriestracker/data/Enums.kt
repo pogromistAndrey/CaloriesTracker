@@ -1,5 +1,9 @@
 package project.projectfour.caloriestracker.data
 
+enum class Type {
+    LESS, ADD, NOTHING
+}
+
 enum class Gender {
     MALE, FEMALE, NOTHING
 }
