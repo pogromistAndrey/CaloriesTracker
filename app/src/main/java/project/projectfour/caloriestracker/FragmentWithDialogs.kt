@@ -13,13 +13,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.snackbar.Snackbar
 import project.projectfour.caloriestracker.ViewModels.UserViewModel
 
 class FragmentWithDialogs: Fragment() {
 
     lateinit var pager:ViewPager
     var userViewModel:UserViewModel? = null
-    var allowNext = false
     companion object{
         fun newInstance():FragmentWithDialogs{
             var fragment = FragmentWithDialogs()
@@ -34,7 +34,6 @@ class FragmentWithDialogs: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_with_dialogs,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
-        //showNameDialog()
 
         pager = view.findViewById(R.id.pager)
         val pagerAdapter = PagerAdapter(childFragmentManager)
@@ -50,11 +49,42 @@ class FragmentWithDialogs: Fragment() {
         }
         val nextButton = view.findViewById<Button>(R.id.next)
         nextButton.setOnClickListener {
-            if(allowNext) {
+            var check:Boolean? = true
+            var mesage = ""
+            when(pager.currentItem){
+                /*1 -> {
+                    check = userViewModel?.checkWeight()
+                    mesage = "Укажите свой вес"
+                }
+                2 -> {
+                    check = userViewModel?.checkDesiredWeight()
+                }*/
+                3 -> {
+                    check = userViewModel?.checkMobility()
+                    mesage = getString(R.string.err3)
+                }
+                4 -> {
+                    check = userViewModel?.checkGender()
+                    mesage = getString(R.string.err4)
+                }
+                /*5 -> {
+                    check = userViewModel?.checkAge()
+                }
+                6 -> {
+                    check = userViewModel?.checkHeight()
+                }*/
+                7 -> {
+                    check = userViewModel?.checkMode()
+                    mesage = getString(R.string.err7)
+                }
+            }
+            if(check == true) {
                 if (pager.currentItem + 1 != pagerAdapter.count) {
                     pager.currentItem++
                     question.setText("Вопрос ${pager.currentItem + 1} из ${pagerAdapter.count}")
                 }
+            } else {
+                Snackbar.make(view, mesage, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
             }
         }
         return view

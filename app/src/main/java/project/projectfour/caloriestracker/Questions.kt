@@ -50,7 +50,6 @@ class FragmentQuestionTwo: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q2,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
-        (parentFragment as FragmentWithDialogs).allowNext = false
         return view
     }
 }
