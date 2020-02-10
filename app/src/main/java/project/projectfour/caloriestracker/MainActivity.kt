@@ -11,7 +11,8 @@ class MainActivity : AppCompatActivity() {
 
         var fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
         if(fragment == null){
-            fragment = FragmentWithDialogs.newInstance()
+            //fragment = FragmentWithDialogs.newInstance()
+            fragment = CaloriesFragment.newInstance()
             supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_container, fragment)
                 .commit()
