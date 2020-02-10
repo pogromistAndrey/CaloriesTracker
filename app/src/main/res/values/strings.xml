@@ -34,5 +34,6 @@
     <string name="err5">Укажите сколько Вам лет</string>
     <string name="err6">Укажите Ваш рост</string>
     <string name="err7">Укажите режим</string>
+    <string name="eat">Добавить продукт</string>
 
 </resources>

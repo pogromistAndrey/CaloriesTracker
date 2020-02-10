@@ -97,17 +97,6 @@ class FragmentWithDialogs: Fragment() {
         return view
     }
 
-    fun showNameDialog() {
-        val builder = AlertDialog.Builder(this.requireContext())
-        val inflater = layoutInflater
-        builder.setTitle("тест")
-        val dialogLayout = inflater.inflate(R.layout.dialog_layout, null)
-        builder.setView(dialogLayout)
 
-
-        val dialog = builder.create()
-
-        dialog.show()
-    }
 
 }

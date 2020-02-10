@@ -3,6 +3,8 @@ package project.projectfour.caloriestracker
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 
 class EatingRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -22,5 +24,22 @@ class EatingRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
 }
 
 class EatingViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
+    init {
+        val addProduct = itemView.findViewById<Button>(R.id.add_product)
+        addProduct.setOnClickListener { showProductDialog() }
+
+    }
+
+    fun showProductDialog() {
+        val builder = AlertDialog.Builder(itemView.context)
+        val inflater = LayoutInflater.from(itemView.context)
+        builder.setTitle("тест")
+        val dialogLayout = inflater.inflate(R.layout.products_dialog, null)
+        builder.setView(dialogLayout)
+
+        val dialog = builder.create()
+
+        dialog.show()
+    }
 
 }
