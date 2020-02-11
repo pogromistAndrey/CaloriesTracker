@@ -27,11 +27,13 @@ class EatingRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
 class EatingViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
     init {
         val addProduct = itemView.findViewById<MaterialButton>(R.id.add_product)
-        addProduct.setOnClickListener { showProductDialog() }
+        addProduct.setOnClickListener {
+            (itemView.context as MainActivity).replaceFragment(EatFragment.newInstance())
+        }
 
     }
 
-    fun showProductDialog() {
+    /*fun showProductDialog() {
         val builder = AlertDialog.Builder(itemView.context)
         val inflater = LayoutInflater.from(itemView.context)
         builder.setTitle("тест")
@@ -41,6 +43,6 @@ class EatingViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
         val dialog = builder.create()
 
         dialog.show()
-    }
+    }*/
 
 }

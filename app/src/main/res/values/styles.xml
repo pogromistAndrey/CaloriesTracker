@@ -27,6 +27,29 @@
         <item name="backgroundTint">@color/colorButton</item>
     </style>
 
+    <style name="eat_title" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="eat" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="eat_units" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="FoodProgressBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="colorButtonNormal">#f50057</item>
+        <item name="colorControlActivated">#33691e</item>
+        <item name="colorControlHighlight">#ff6d00</item>
+        <item name="android:progressDrawable">@drawable/food_progressbar_horizontal</item>
+        <item name="android:minWidth">200dp</item>
+    </style>
+
 
 
 </resources>

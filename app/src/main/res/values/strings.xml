@@ -35,5 +35,10 @@
     <string name="err6">Укажите Ваш рост</string>
     <string name="err7">Укажите режим</string>
     <string name="eat">Добавить продукт</string>
+    <string name="eat_name">Блюдо</string>
+    <string name="eat_weight">Вес</string>
+    <string name="eat_weight_unit">гр.</string>
+    <string name="eat_cal">Калорийность</string>
+    <string name="eat_cal_unit">Ккал</string>
 
 </resources>
