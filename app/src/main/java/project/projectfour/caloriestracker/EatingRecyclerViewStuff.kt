@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 
 class EatingRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -25,7 +26,7 @@ class EatingRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>()
 
 class EatingViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
     init {
-        val addProduct = itemView.findViewById<Button>(R.id.add_product)
+        val addProduct = itemView.findViewById<MaterialButton>(R.id.add_product)
         addProduct.setOnClickListener { showProductDialog() }
 
     }

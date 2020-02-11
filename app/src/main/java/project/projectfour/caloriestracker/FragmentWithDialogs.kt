@@ -4,15 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import project.projectfour.caloriestracker.ViewModels.UserViewModel
 
@@ -40,14 +36,14 @@ class FragmentWithDialogs: Fragment() {
         pager.adapter = pagerAdapter
 
         val question = view.findViewById<TextView>(R.id.question)
-        val backButton = view.findViewById<Button>(R.id.back)
+        val backButton = view.findViewById<MaterialButton>(R.id.back)
         backButton.setOnClickListener {
             if(pager.currentItem != 0) {
                 pager.currentItem--
                 question.setText("Вопрос ${pager.currentItem + 1} из ${pagerAdapter.count}")
             }
         }
-        val nextButton = view.findViewById<Button>(R.id.next)
+        val nextButton = view.findViewById<MaterialButton>(R.id.next)
         nextButton.setOnClickListener {
             var check:Boolean? = true
             var mesage = ""

@@ -30,20 +30,23 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.13">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/slow"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/q8v1" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/normal"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/q8v2" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/fast"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/q8v3" />
