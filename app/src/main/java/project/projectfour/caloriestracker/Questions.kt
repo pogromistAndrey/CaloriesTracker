@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.NumberPicker
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -70,16 +71,33 @@ class FragmentQuestionTwo: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q2,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
-        val text = view.findViewById<EditText>(R.id.editText)
-        text.setOnKeyListener { view, i, keyEvent ->
-            val a = ((view as EditText).text).toString()
-            if(!a.equals("")) {
-                val b = a.toIntOrNull()
-                if (b != null)
-                    userViewModel?.setWeight(b)
-            }
-            false
+
+        val digit1 = view.findViewById<NumberPicker>(R.id.numberPicker1);
+        digit1.setMaxValue(9);
+        digit1.setMinValue(0);
+        val digit2 = view.findViewById<NumberPicker>(R.id.numberPicker2);
+        digit2.setMaxValue(9);
+        digit2.setMinValue(0);
+        val digit3 = view.findViewById<NumberPicker>(R.id.numberPicker3);
+        digit3.setMaxValue(9);
+        digit3.setMinValue(0);
+        digit1.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setWeight(digit1.value*100 + digit2.value*10 + digit3.value)
         }
+        digit2.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setWeight(digit1.value*100 + digit2.value*10 + digit3.value)
+        }
+        digit3.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setWeight(digit1.value*100 + digit2.value*10 + digit3.value)
+        }
+
+        val userObserver = Observer<User> { newUser ->
+            digit1.value = 5
+            digit2.value = 5
+            digit3.value = 5
+        }
+        userViewModel?.userLiveData?.observe(this, userObserver)
+
         return view
     }
 }
@@ -100,17 +118,32 @@ class FragmentQuestionThree: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q3,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
-        val text = view.findViewById<EditText>(R.id.editText)
-        text.setOnKeyListener { view, i, keyEvent ->
-            val a = ((view as EditText).text).toString()
-            if(!a.equals("")) {
-                val b = a.toIntOrNull()
-                if (b != null)
-                    userViewModel?.setDesiredWeight(b)
-            }
-            false
+
+        val digit1 = view.findViewById<NumberPicker>(R.id.numberPicker1);
+        digit1.setMaxValue(9);
+        digit1.setMinValue(0);
+        val digit2 = view.findViewById<NumberPicker>(R.id.numberPicker2);
+        digit2.setMaxValue(9);
+        digit2.setMinValue(0);
+        val digit3 = view.findViewById<NumberPicker>(R.id.numberPicker3);
+        digit3.setMaxValue(9);
+        digit3.setMinValue(0);
+        digit1.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setDesiredWeight(digit1.value*100 + digit2.value*10 + digit3.value)
         }
-        //showNameDialog()
+        digit2.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setDesiredWeight(digit1.value*100 + digit2.value*10 + digit3.value)
+        }
+        digit3.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setDesiredWeight(digit1.value*100 + digit2.value*10 + digit3.value)
+        }
+
+        val userObserver = Observer<User> { newUser ->
+            digit1.value = 5
+            digit2.value = 5
+            digit3.value = 5
+        }
+        userViewModel?.userLiveData?.observe(this, userObserver)
 
         return view
     }
@@ -230,16 +263,33 @@ class FragmentQuestionSix: Fragment() {
         val view = inflater.inflate(R.layout.fragment_q6,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
         //showNameDialog()
-        val text = view.findViewById<EditText>(R.id.editText)
-        text.setOnKeyListener { view, i, keyEvent ->
-            val a = ((view as EditText).text).toString()
-            if(!a.equals("")) {
-                val b = a.toIntOrNull()
-                if (b != null)
-                    userViewModel?.setAge(b)
-            }
-            false
+
+        val digit1 = view.findViewById<NumberPicker>(R.id.numberPicker1);
+        digit1.setMaxValue(9);
+        digit1.setMinValue(0);
+        val digit2 = view.findViewById<NumberPicker>(R.id.numberPicker2);
+        digit2.setMaxValue(9);
+        digit2.setMinValue(0);
+        val digit3 = view.findViewById<NumberPicker>(R.id.numberPicker3);
+        digit3.setMaxValue(9);
+        digit3.setMinValue(0);
+        digit1.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setAge(digit1.value*100 + digit2.value*10 + digit3.value)
         }
+        digit2.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setAge(digit1.value*100 + digit2.value*10 + digit3.value)
+        }
+        digit3.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setAge(digit1.value*100 + digit2.value*10 + digit3.value)
+        }
+
+        val userObserver = Observer<User> { newUser ->
+            digit1.value = 5
+            digit2.value = 5
+            digit3.value = 5
+        }
+        userViewModel?.userLiveData?.observe(this, userObserver)
+
         return view
     }
 }
@@ -260,17 +310,32 @@ class FragmentQuestionSeven: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_q7,container,false)
         userViewModel = activity?.let { ViewModelProviders.of(it).get(UserViewModel::class.java) }
-        val text = view.findViewById<EditText>(R.id.editText)
-        text.setOnKeyListener { view, i, keyEvent ->
-            val a = ((view as EditText).text).toString()
-            if(!a.equals("")) {
-                val b = a.toIntOrNull()
-                if (b != null)
-                    userViewModel?.setHeight(b)
-            }
-            false
+
+        val digit1 = view.findViewById<NumberPicker>(R.id.numberPicker1);
+        digit1.setMaxValue(9);
+        digit1.setMinValue(0);
+        val digit2 = view.findViewById<NumberPicker>(R.id.numberPicker2);
+        digit2.setMaxValue(9);
+        digit2.setMinValue(0);
+        val digit3 = view.findViewById<NumberPicker>(R.id.numberPicker3);
+        digit3.setMaxValue(9);
+        digit3.setMinValue(0);
+        digit1.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setHeight(digit1.value*100 + digit2.value*10 + digit3.value)
         }
-        //showNameDialog()
+        digit2.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setHeight(digit1.value*100 + digit2.value*10 + digit3.value)
+        }
+        digit3.setOnValueChangedListener { picker, oldVal, newVal ->
+            userViewModel?.setHeight(digit1.value*100 + digit2.value*10 + digit3.value)
+        }
+
+        val userObserver = Observer<User> { newUser ->
+            digit1.value = 5
+            digit2.value = 5
+            digit3.value = 5
+        }
+        userViewModel?.userLiveData?.observe(this, userObserver)
 
         return view
     }
