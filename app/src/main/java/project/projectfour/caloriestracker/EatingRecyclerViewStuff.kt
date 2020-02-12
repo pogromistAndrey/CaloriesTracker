@@ -28,7 +28,7 @@ class EatingViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
     init {
         val addProduct = itemView.findViewById<MaterialButton>(R.id.add_product)
         addProduct.setOnClickListener {
-            (itemView.context as MainActivity).replaceFragment(EatFragment.newInstance())
+            (itemView.context as MainActivity).replaceFragment(EatFragment.newInstance(), true)
         }
 
     }

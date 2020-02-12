@@ -85,6 +85,8 @@ class FragmentWithDialogs: Fragment() {
                 if (pager.currentItem + 1 != pagerAdapter.count) {
                     pager.currentItem++
                     question.setText("Вопрос ${pager.currentItem + 1} из ${pagerAdapter.count}")
+                } else {
+                    (activity as MainActivity).replaceFragment(CaloriesFragment.newInstance(),false)
                 }
             } else {
                 Snackbar.make(view, mesage, Snackbar.LENGTH_SHORT).setAction("Action", null).show()

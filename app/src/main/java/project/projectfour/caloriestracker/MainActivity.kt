@@ -12,18 +12,24 @@ class MainActivity : AppCompatActivity() {
 
         var fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
         if(fragment == null){
-            //fragment = FragmentWithDialogs.newInstance()
-            fragment = CaloriesFragment.newInstance()
+            fragment = FragmentWithDialogs.newInstance()
+            //fragment = CaloriesFragment.newInstance()
             supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_container, fragment)
                 .commit()
         }
     }
 
-    fun replaceFragment(fragment: Fragment){
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
-            .addToBackStack(null)
-            .commit()
+    fun replaceFragment(fragment: Fragment, add: Boolean){
+        if(add) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        } else {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit()
+        }
     }
 }
